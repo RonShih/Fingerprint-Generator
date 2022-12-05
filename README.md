@@ -1,3 +1,6 @@
+## Execution
+`python3 hash.py`
+
 ## Goal
 This program derives deduplication rate of a file in python and get fingerprints output for future use.
 
