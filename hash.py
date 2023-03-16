@@ -17,9 +17,9 @@ def show_dedupe_rate(total_chunks_num, unique_chunks_num): #calculate dedupe_rat
 def page_FP_dedup():
     global total_chunks_num
     global unique_chunks_num
-    output_file_page_FP = open('/mnt/c/Users/Ron/Desktop/page_fp_output.txt', 'w')
+    output_file_page_FP = open('/mnt/c/Users/USER/Desktop/page_fp_output.txt', 'w')
     hash_table = dict() #hash table (using dictionary)
-    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/Input/*"): #input path
+    for filename in glob.glob("/mnt/c/Users/USER/Desktop/Input/*"): #input path
         print('Test FP:', filename, 'with chunk size', CHUNKSIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(CHUNKSIZE), b''): #for each chunk
@@ -32,14 +32,13 @@ def page_FP_dedup():
                 # else this is a duplicate chunk
                 total_chunks_num += 1
                 output_file_page_FP.writelines(fingerprint + '\n') #write fp into output file
-                afile.seek(CHUNKSIZE, 1) #move to next chunk
 
 def sector_FP_dedup():
     global total_chunks_num
     global unique_chunks_num
-    output_file_sector_FP = open('/mnt/c/Users/Ron/Desktop/sector_fp_output.txt', 'w')
+    output_file_sector_FP = open('/mnt/c/Users/USER/Desktop/sector_fp_output.txt', 'w')
     hash_table = dict() #hash table (using dictionary)
-    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/Input/*"): #input path
+    for filename in glob.glob("/mnt/c/Users/USER/Desktop/Input/*"): #input path
         print('Test FP:', filename, 'with chunk size', LBA_SIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(LBA_SIZE), b''): #for each chunk
@@ -52,14 +51,13 @@ def sector_FP_dedup():
                 # else this is a duplicate chunk
                 total_chunks_num += 1
                 output_file_sector_FP.writelines(fingerprint + '\n') #write fp into output file
-                afile.seek(LBA_SIZE, 1) #move to next chunk
 
 def sector_CRC_generator():
     global total_chunks_num
     global unique_chunks_num
-    output_file_sector_CRC = open('/mnt/c/Users/Ron/Desktop/sector_crc_output.txt', 'w')
+    output_file_sector_CRC = open('/mnt/c/Users/USER/Desktop/sector_crc_output.txt', 'w')
     hash_table = dict() #hash table (using dictionary)
-    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/Input/*"): #input path
+    for filename in glob.glob("/mnt/c/Users/USER/Desktop/Input/*"): #input path
         print('Generate CRC:', filename, 'with chunk size', LBA_SIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(LBA_SIZE), b''): #for each chunk
@@ -70,7 +68,6 @@ def sector_CRC_generator():
                     unique_chunks_num += 1
                 total_chunks_num += 1
                 output_file_sector_CRC.writelines(str(hex(crc)[2:]) + '\n') #write fp into output file
-                afile.seek(LBA_SIZE, 1) #move to next chunk
 
 page_FP_dedup()
 print(total_chunks_num, unique_chunks_num)
