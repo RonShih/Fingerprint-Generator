@@ -55,12 +55,20 @@ def sector_FP_dedup():
                 afile.seek(LBA_SIZE, 1) #move to next chunk
 
 def sector_CRC_generator():
+    global total_chunks_num
+    global unique_chunks_num
     output_file_sector_CRC = open('/mnt/c/Users/Ron/Desktop/sector_crc_output.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob("/mnt/c/Users/Ron/Desktop/Input/*"): #input path
         print('Generate CRC:', filename, 'with chunk size', LBA_SIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(LBA_SIZE), b''): #for each chunk
                 crc = zlib.crc32(cur_chunk)
+                check_duplicate = crc in hash_table #check if this fingerprint in hash_table
+                if(check_duplicate == False):
+                    hash_table[crc] = cur_chunk #insert it into dictionary
+                    unique_chunks_num += 1
+                total_chunks_num += 1
                 output_file_sector_CRC.writelines(str(hex(crc)[2:]) + '\n') #write fp into output file
                 afile.seek(LBA_SIZE, 1) #move to next chunk
 
@@ -71,4 +79,7 @@ total_chunks_num = 0
 unique_chunks_num = 0
 sector_FP_dedup()
 show_dedupe_rate(total_chunks_num, unique_chunks_num)
+total_chunks_num = 0
+unique_chunks_num = 0
 sector_CRC_generator()
+show_dedupe_rate(total_chunks_num, unique_chunks_num)
