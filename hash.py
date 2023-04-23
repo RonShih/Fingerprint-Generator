@@ -33,7 +33,6 @@ def page_FP_4k_dedup():
                 # else this is a duplicate chunk
                 total_chunks_num += 1
                 output_file_page_FP.writelines(fingerprint + '\n') #write fp into output file
-                afile.seek(CHUNKSIZE, 1) #move to next chunk
 
 def page_FP_8k_dedup():
     CHUNKSIZE = 8192
@@ -54,7 +53,6 @@ def page_FP_8k_dedup():
                 # else this is a duplicate chunk
                 total_chunks_num += 1
                 output_file_page_FP.writelines(fingerprint + '\n') #write fp into output file
-                afile.seek(CHUNKSIZE, 1) #move to next chunk
 
 def page_FP_16k_dedup():
     CHUNKSIZE = 16384
@@ -75,7 +73,6 @@ def page_FP_16k_dedup():
                 # else this is a duplicate chunk
                 total_chunks_num += 1
                 output_file_page_FP.writelines(fingerprint + '\n') #write fp into output file
-                afile.seek(CHUNKSIZE, 1) #move to next chunk
 
 def page_FP_32k_dedup():
     CHUNKSIZE = 32768
