@@ -1,13 +1,7 @@
 ## Execution
 `python3 hash.py`
 
-## Goal
-This program derives deduplication rate of a file in python and get fingerprints output for future use.
-
-## Steps in this program:
-1. Reading files in a folder
-2. For each file it chunks in fixed-size method (4KB in example) 
-3. Building a hash table
-4. Hashing each chunk and insert its fingerprint into this hash table
-5. Write its fingerprint into output file
-5. Derive dedup rate
+## This program achieve followings functions: 
+1. Derive deduplication rate of input with different chunks size 
+2. Output fingerprints file for future use (e.g., storage simulator).
+3. Estimate metadata overhead produced by dedup under CAFTL mechanism for SSD.
