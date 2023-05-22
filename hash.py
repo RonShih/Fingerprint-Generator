@@ -39,11 +39,25 @@ def page_FP_4k_dedup():
     CHUNKSIZE = 4096
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_page_FP = open(os.path.join(output_address, 'fp_4k.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_page_FP = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_fp_4KB.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_page_FP = open(os.path.join(output_address, 'fp_4k.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Test FP:', filename, 'with chunk size', CHUNKSIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(CHUNKSIZE), b''): #for each chunk
@@ -68,11 +82,25 @@ def page_FP_8k_dedup():
     CHUNKSIZE = 8192
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_page_FP = open(os.path.join(output_address, 'fp_8k.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_page_FP = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_fp_8KB.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_page_FP = open(os.path.join(output_address, 'fp_8k.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Test FP:', filename, 'with chunk size', CHUNKSIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(CHUNKSIZE), b''): #for each chunk
@@ -97,11 +125,25 @@ def page_FP_16k_dedup():
     CHUNKSIZE = 16384
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_page_FP = open(os.path.join(output_address, 'fp_16k.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_page_FP = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_fp_16KB.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_page_FP = open(os.path.join(output_address, 'fp_16k.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Test FP:', filename, 'with chunk size', CHUNKSIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(CHUNKSIZE), b''): #for each chunk
@@ -126,11 +168,25 @@ def page_FP_32k_dedup():
     CHUNKSIZE = 32768
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_page_FP = open(os.path.join(output_address, 'fp_32k.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_page_FP = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_fp_32KB.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_page_FP = open(os.path.join(output_address, 'fp_32k.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Test FP:', filename, 'with chunk size', CHUNKSIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(CHUNKSIZE), b''): #for each chunk
@@ -154,11 +210,25 @@ def page_FP_32k_dedup():
 def sector_FP_dedup():
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_sector_FP = open(os.path.join(output_address, 'fp_512B.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_sector_FP = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_fp_512B.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_sector_FP = open(os.path.join(output_address, 'fp_512B.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Test FP:', filename, 'with chunk size', LBA_SIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(LBA_SIZE), b''): #for each chunk
@@ -182,11 +252,25 @@ def sector_FP_dedup():
 def sector_CRC_generator():
     global total_chunks_num
     global unique_chunks_num
+<<<<<<< Updated upstream
     global LBA_num
     global VBA_num
     output_file_sector_CRC = open(os.path.join(output_address, 'crc_512B.txt'), 'w')
     hash_table = dict() #hash table (using dictionary)
     for filename in glob.glob(os.path.join(input_address, "*")): #input path
+=======
+<<<<<<< HEAD
+    output_file_sector_CRC = open('/mnt/c/Users/Ron/Desktop/FPoutput/linux_crc_512B.txt', 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob("/mnt/c/Users/Ron/Desktop/input/*"): #input path
+=======
+    global LBA_num
+    global VBA_num
+    output_file_sector_CRC = open(os.path.join(output_address, 'crc_512B.txt'), 'w')
+    hash_table = dict() #hash table (using dictionary)
+    for filename in glob.glob(os.path.join(input_address, "*")): #input path
+>>>>>>> 2278c595eab7b1f634c3da9e8d65661340c0a060
+>>>>>>> Stashed changes
         print('Generate CRC:', filename, 'with chunk size', LBA_SIZE)
         with open(filename, 'rb') as afile: #open each file
             for cur_chunk in iter(lambda: afile.read(LBA_SIZE), b''): #for each chunk
